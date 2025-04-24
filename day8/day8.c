@@ -91,7 +91,7 @@ int day8_pt2()
 void parse_data_8(char* buffer[], int buffer_size)
 {
     FILE* fp;
-    fp = fopen("input/day8.txt", "r");
+    fp = fopen("input/day08.txt", "r");
     char* line_buffer = malloc(1024);
     int line_count = 0;
 

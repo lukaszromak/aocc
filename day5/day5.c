@@ -127,7 +127,7 @@ void parse_data_5(char* buffer[], int buffer_size)
     FILE* fp;
     int line_count = 0;
     char* line_buffer = malloc(1024);
-    fp = fopen("input/day5.txt", "r");
+    fp = fopen("input/day05.txt", "r");
 
     while (fgets(line_buffer, 1024, fp))
     {

@@ -2,7 +2,7 @@
 
 int day1_pt1()
 {
-    FILE* fp = fopen("input/day1.txt", "r");
+    FILE* fp = fopen("input/day01.txt", "r");
 
     if(fp == NULL)
     {
@@ -31,7 +31,7 @@ int day1_pt1()
 
 int day1_pt2()
 {
-    FILE* fp = fopen("input/day1.txt", "r");
+    FILE* fp = fopen("input/day01.txt", "r");
 
     if(fp == NULL)
     {

@@ -161,7 +161,7 @@ void parse_data(struct Wire buffer[], int buffer_size)
     FILE* fp;
     int line_count = 0;
     int word_count = 0;
-    fp = fopen("input/day7.txt", "r");
+    fp = fopen("input/day07.txt", "r");
     char* line_buffer = malloc(256);
     char* word_buffer = malloc(256);
     bool name_next = false;

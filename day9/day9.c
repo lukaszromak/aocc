@@ -75,7 +75,7 @@ void parse_data_9(int buffer[][8])
     char* current_city = malloc(1024);
     char* line_buffer = malloc(1024);
     char* word_buffer = malloc(1024);
-    fp = fopen("input/day9.txt", "r");
+    fp = fopen("input/day09.txt", "r");
 
     while(fgets(line_buffer, 1024, fp))
     {

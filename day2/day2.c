@@ -20,7 +20,7 @@ int day2_pt1()
     long w = 0;
     long h = 0;
 
-    fp = fopen("input/day2.txt", "r");
+    fp = fopen("input/day02.txt", "r");
     cubes = parse_data_2(fp, &cubesSize);
     fclose(fp);
 
@@ -62,7 +62,7 @@ int day2_pt2() {
     long w = 0;
     long h = 0;
 
-    fp = fopen("input/day2.txt", "r");
+    fp = fopen("input/day02.txt", "r");
     cubes = parse_data_2(fp, &cubesSize);
     fclose(fp);
 

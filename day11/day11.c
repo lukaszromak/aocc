@@ -7,7 +7,6 @@
 char* day11_pt1();
 char* day11_pt2();
 bool check_combinations(char* password, int password_len);
-//bool check_combinations(char* password, int password_len, int start_offset);
 bool is_password_valid(char* password);
 bool contains_three_increasing(char* password);
 bool contains_forbidden_char(char* password);
@@ -32,68 +31,6 @@ char* day11_pt2()
 
     return DAY11_PT1_RESULT;
 }
-
-// char* day11_pt1()
-// {
-//     char* last_password = LAST_PASSWORD;
-//     int last_password_len = strlen(last_password);
-//     int start_offset = last_password_len - 3;
-//     char* temp_buffer = malloc(1024);
-
-//     while(start_offset >= 0)
-//     {
-//         char first = last_password[start_offset];
-//         char second = last_password[start_offset + 1];
-//         char third = last_password[start_offset + 2];
-
-//         strcpy(temp_buffer, last_password);
-
-//         if(second > first + 1)
-//         {
-//             first++;
-//             second = first + 1;
-//             third = second + 1;
-//         } else {
-//             second = first + 1;
-//             third = second + 1;
-//         }
-
-//         while(true)
-//         {
-//             temp_buffer[start_offset] = first;
-//             temp_buffer[start_offset + 1] = second;
-//             temp_buffer[start_offset + 2] = third;
-
-//             if(is_password_valid(temp_buffer))
-//             {
-//                 return temp_buffer;
-//             }
-
-//             if(start_offset < last_password_len - 3)
-//             {
-//                 if(check_combinations(temp_buffer, last_password_len, start_offset))
-//                 {
-//                     return temp_buffer;   
-//                 }
-//             }
-
-//             first++;
-//             second++;
-//             third++;
-
-//             if(third > 'z')
-//             {
-//                 start_offset--;
-//                 break;
-//             }
-//         }
-
-//     }
-
-//     free(temp_buffer);
-
-//     return NULL;
-// }
 
 bool check_combinations(char* password, int password_len)
 {

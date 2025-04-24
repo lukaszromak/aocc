@@ -144,7 +144,7 @@ bool point_exists(struct point* buffer, int num_of_points, struct point point_to
 char* parse_data_3()
 {
     FILE* fp;
-    fp = fopen("input/day3.txt", "r");
+    fp = fopen("input/day03.txt", "r");
     int buffer_size = 1024 * 16;
     char* buffer = malloc(sizeof(char) * buffer_size);
 
