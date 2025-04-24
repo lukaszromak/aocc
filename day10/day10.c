@@ -21,7 +21,8 @@ int look_and_say(char* seed, int rounds)
 {
     char* buffer = malloc(1024 * 1024 * 16);
     char* temp_buffer = malloc(1024 * 1024 * 16);
-    char* temp_buffer_pos = temp_buffer;
+    char* temp;
+    int temp_buffer_pos = 0;
     char curr_char = 0;
     int char_count = 0;
     strcpy(buffer, seed);
@@ -34,10 +35,8 @@ int look_and_say(char* seed, int rounds)
             {
                 if (curr_char != 0)
                 {
-                    temp_buffer_pos += sprintf(temp_buffer_pos, "%d", char_count);
-                    *temp_buffer_pos = curr_char;
-                    temp_buffer_pos++;
-                    *temp_buffer_pos = 0;
+                    temp_buffer[temp_buffer_pos++] = '0' + (char_count % 10);
+                    temp_buffer[temp_buffer_pos++] = curr_char;
                 }
                 curr_char = buffer[j];
                 char_count = 0;
@@ -46,14 +45,15 @@ int look_and_say(char* seed, int rounds)
             char_count++;
         }
 
-        temp_buffer_pos += sprintf(temp_buffer_pos, "%d", char_count);
-        *temp_buffer_pos = curr_char;
-        temp_buffer_pos++;
-        *temp_buffer_pos = 0;
+        temp_buffer[temp_buffer_pos++] = '0' + (char_count % 10);
+        temp_buffer[temp_buffer_pos++] = curr_char;
+        temp_buffer[temp_buffer_pos++] = 0;
         char_count = 0;
         curr_char = 0;
-        strcpy(buffer, temp_buffer);
-        temp_buffer_pos = temp_buffer;
+        char* temp = buffer;
+        buffer = temp_buffer;
+        temp_buffer = temp;
+        temp_buffer_pos = 0;
     }
 
     return chars_in_str(buffer);
@@ -62,7 +62,7 @@ int look_and_say(char* seed, int rounds)
 int chars_in_str(char* str)
 {
     int chars = 0;
-
+    
     for(int i = 0; str[i] != 0; i++) chars++;
 
     return chars;

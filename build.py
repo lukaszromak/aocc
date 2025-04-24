@@ -14,4 +14,3 @@ for i in range(1, 25):
 
 os.system(f"cl {path}")
 os.system(f"del /F aoc.obj")
-input()
