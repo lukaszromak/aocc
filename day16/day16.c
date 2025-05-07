@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "../utils/utils.h"
 
 typedef struct Aunt {
@@ -15,6 +16,8 @@ typedef struct Aunt {
     int perfumes;
 } Aunt;
 
+int day16_pt1();
+int day16_pt2();
 Aunt* parse_input_day16(int* num_aunts);
 Aunt parse_mfcsam();
 Aunt parse_aunt_str();

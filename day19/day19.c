@@ -21,80 +21,80 @@ char* parse_input_molecule_day19();
 
 const char* DAY19_INPUT_FILE_PATH = "../input/day19s.txt";
 
-int main()
-{
-    int num_replacements = 0;
-    Replacement* replacements = parse_input_replacement_day19(&num_replacements);
-    char* molecule = parse_input_molecule_day19();
-    int molecule_len = strlen(molecule) + 20;
-    OccuredReplacement* occured_replacements = malloc(molecule_len * sizeof(OccuredReplacement) * REPLACEMENT_MAXIMUM_FROM_SIZE);
-    memset(occured_replacements, -1, molecule_len * sizeof(OccuredReplacement) * REPLACEMENT_MAXIMUM_FROM_SIZE);
-    bool replacement_match = true;
-    bool replacement_duplicate = false;
-    int tmp = 0;
-    int replacement_count = 0;
+// int main()
+// {
+//     int num_replacements = 0;
+//     Replacement* replacements = parse_input_replacement_day19(&num_replacements);
+//     char* molecule = parse_input_molecule_day19();
+//     int molecule_len = strlen(molecule) + 20;
+//     OccuredReplacement* occured_replacements = malloc(molecule_len * sizeof(OccuredReplacement) * REPLACEMENT_MAXIMUM_FROM_SIZE);
+//     memset(occured_replacements, -1, molecule_len * sizeof(OccuredReplacement) * REPLACEMENT_MAXIMUM_FROM_SIZE);
+//     bool replacement_match = true;
+//     bool replacement_duplicate = false;
+//     int tmp = 0;
+//     int replacement_count = 0;
 
-    for(int i = 0; molecule[i]; i++)
-    {
-        for(int j = 0; j < num_replacements; j++)
-        {
-            replacement_match = true;
-            tmp = i;
+//     for(int i = 0; molecule[i]; i++)
+//     {
+//         for(int j = 0; j < num_replacements; j++)
+//         {
+//             replacement_match = true;
+//             tmp = i;
 
-            //printf("Checking replacement %s\n", replacements[j]);
+//             //printf("Checking replacement %s\n", replacements[j]);
 
-            for(int k = 0; replacements[j].from[k]; k++)
-            {
-                //printf("%c %c\n", molecule[tmp], replacements[j].from[k]);
-                if(molecule[tmp] != replacements[j].from[k])
-                {
-                    replacement_match = false;
-                    break;
-                }
-                tmp++;
-            }
+//             for(int k = 0; replacements[j].from[k]; k++)
+//             {
+//                 //printf("%c %c\n", molecule[tmp], replacements[j].from[k]);
+//                 if(molecule[tmp] != replacements[j].from[k])
+//                 {
+//                     replacement_match = false;
+//                     break;
+//                 }
+//                 tmp++;
+//             }
             
-            if(replacement_match)
-            {
-                replacement_duplicate = false;
-                printf("POS: %d, %s => %s\n", i, replacements[j].from, replacements[j].to);
+//             if(replacement_match)
+//             {
+//                 replacement_duplicate = false;
+//                 printf("POS: %d, %s => %s\n", i, replacements[j].from, replacements[j].to);
 
-                for(int l = 0; l < molecule_len * 2; l++)
-                {
-                    printf("%d\n", occured_replacements[l].position != -1);
-                    if(occured_replacements[l].position != -1 && check_is_duplicate(molecule, molecule_len, replacements[j], i, occured_replacements[l])) 
-                    {
-                        replacement_duplicate = true;
-                        break;
-                    }
-                }
+//                 for(int l = 0; l < molecule_len * 2; l++)
+//                 {
+//                     printf("%d\n", occured_replacements[l].position != -1);
+//                     if(occured_replacements[l].position != -1 && check_is_duplicate(molecule, molecule_len, replacements[j], i, occured_replacements[l])) 
+//                     {
+//                         replacement_duplicate = true;
+//                         break;
+//                     }
+//                 }
 
-                if(!replacement_duplicate) replacement_count++;
+//                 if(!replacement_duplicate) replacement_count++;
 
-                replacement_duplicate = false;
+//                 replacement_duplicate = false;
 
-                // save it as occured
-                int replacement_length = strlen(replacements[j].from);
+//                 // save it as occured
+//                 int replacement_length = strlen(replacements[j].from);
 
-                if(replacement_length == 1)
-                {
-                    occured_replacements[i * 2].position = i;
-                    occured_replacements[i * 2].from = replacements[j].from;
-                    occured_replacements[i * 2].to = replacements[j].to;
-                }
-                else if(replacement_length == 2)
-                {
-                    occured_replacements[i * 2 + 1].position = i;
-                    occured_replacements[i * 2 + 1].from = replacements[j].from;
-                    occured_replacements[i * 2 + 1].to = replacements[j].to;
-                }
-            }
+//                 if(replacement_length == 1)
+//                 {
+//                     occured_replacements[i * 2].position = i;
+//                     occured_replacements[i * 2].from = replacements[j].from;
+//                     occured_replacements[i * 2].to = replacements[j].to;
+//                 }
+//                 else if(replacement_length == 2)
+//                 {
+//                     occured_replacements[i * 2 + 1].position = i;
+//                     occured_replacements[i * 2 + 1].from = replacements[j].from;
+//                     occured_replacements[i * 2 + 1].to = replacements[j].to;
+//                 }
+//             }
 
-            replacement_match = true;
-        }
-    }
-    printf("%d\n", replacement_count);
-}
+//             replacement_match = true;
+//         }
+//     }
+//     printf("%d\n", replacement_count);
+// }
 
 bool check_is_duplicate(char* molecule, int molecule_len, Replacement replacement, int position, OccuredReplacement occured_replacement)
 {

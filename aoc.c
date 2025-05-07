@@ -2,6 +2,7 @@
 #include "day1/day1.h"
 #include "day2/day2.h"
 #include "day3/day3.h"
+#include "day4/day4.h"
 #include "day5/day5.h"
 #include "day6/day6.h"
 #include "day7/day7.h"
@@ -22,7 +23,7 @@ int (*pt1[24]) () =
     day1_pt1,
     day2_pt1,
     day3_pt1,
-    NULL,
+    day4_pt1,
     day5_pt1,
     day6_pt1,
     day7_pt1,
@@ -50,7 +51,7 @@ int (*pt2[24]) () =
     day1_pt2,
     day2_pt2,
     day3_pt2,
-    NULL,
+    day4_pt2,
     day5_pt2,
     day6_pt2,
     day7_pt2,
