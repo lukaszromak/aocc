@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 #define NO_OP 0
 #define AND 1
@@ -32,7 +33,7 @@ int PT1_RES = 0;
 
 int day7_pt1()
 {
-    struct Wire buffer[INPUT_BUFFER_SIZE] = { -1 };
+    struct Wire buffer[INPUT_BUFFER_SIZE] = { 0 };
     int a_signal;
 
     parse_data(buffer, INPUT_BUFFER_SIZE);
@@ -45,7 +46,7 @@ int day7_pt1()
 
 int day7_pt2()
 {
-    struct Wire buffer[INPUT_BUFFER_SIZE] = { -1 };
+    struct Wire buffer[INPUT_BUFFER_SIZE] = { 0 };
     int a_signal;
 
     parse_data(buffer, INPUT_BUFFER_SIZE);
@@ -147,7 +148,7 @@ int find_wire(struct Wire buffer[], int buffer_size, char* wire)
 {
     for(int i = 0; i < buffer_size; i++)
     {
-        if(strcmp(buffer[i].wire_name, wire) == 0)
+        if(buffer[i].wire_name != NULL && strcmp(buffer[i].wire_name, wire) == 0)
         {
             return i;
         }
@@ -198,10 +199,9 @@ void parse_data(struct Wire buffer[], int buffer_size)
             else if(name_next)
             {
                 buffer[line_count].wire_name = malloc(WIRE_NAME_SIZE);
-                if(word_buffer[strlen(word_buffer) - 1] == 10)
-                {
-                   word_buffer[strlen(word_buffer) - 1] = 0; 
-                }
+                if (word_buffer[strlen(word_buffer) - 1] == 10 || word_buffer[strlen(word_buffer) - 1] == 13) {
+                    word_buffer[strlen(word_buffer) - 1] = 0;
+                }                
                 strcpy(buffer[line_count].wire_name, word_buffer);
             }
             else if(strcmp(word_buffer, "->") == 0)

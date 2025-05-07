@@ -11,10 +11,6 @@
 #define TOGGLE 2
 #define ALL_ONES 0xffffffff
 
-void parse_data_6(struct operation buffer[], int buffer_size);
-int num_lights_turned_on_bool(bool buffer[][1000], int buffer_size);
-int num_lights_turned_on_int(int buffer[][1000], int buffer_size);
-
 struct point {
     int x;
     int y;
@@ -26,12 +22,16 @@ struct operation {
     int op_type;
 };
 
+void parse_data_6(struct operation buffer[], int buffer_size);
+int num_lights_turned_on_bool(bool buffer[][1000], int buffer_size);
+int num_lights_turned_on_int(int buffer[][1000], int buffer_size);
+
 int day6_pt1()
 {
     int buffer_size = BUFFER_SIZE;
     struct operation buffer[BUFFER_SIZE] = { 0 };
     parse_data_6(buffer, BUFFER_SIZE);
-
+    
     bool lights_state[1000][1000] = { false };
 
     for (int i = 0; i < buffer_size; i++)

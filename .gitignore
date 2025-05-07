@@ -1,3 +1,10 @@
 input/
 *.obj
+*.out
 aoc.exe
+aocc
+CMakeFiles
+cmake_install.cmake_install
+CMakeCache.txt
+Makefile
+cmake_install.cmake

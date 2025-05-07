@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <Windows.h>
 
 #define LAST_PASSWORD "cqjxjnds"
 
@@ -22,7 +21,8 @@ char* day11_pt1()
     DAY11_PT1_RESULT = malloc(strlen(buff) + 1);
     strcpy(DAY11_PT1_RESULT, buff);
     free(buff);
-    return buff;
+    
+    return DAY11_PT1_RESULT;
 }
 
 char* day11_pt2()

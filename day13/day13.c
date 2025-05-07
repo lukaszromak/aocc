@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 const char* DAY13_INPUT_FILE_PATH = "input/day13.txt";
 int DAY13_LONGEST_PATH = 0;

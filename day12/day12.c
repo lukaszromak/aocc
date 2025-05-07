@@ -27,7 +27,7 @@ bool has_red(Element* root);
 struct Element* parse_input();
 void debug_print(Element* root, int depth);
 void add_child(struct Element* parent, struct Element* child);
-struct Element* initialize_element();
+struct Element* initialize_element(Element_type element_type);
 
 int day12_pt2()
 {
@@ -219,7 +219,7 @@ void add_child(struct Element* parent, struct Element* child)
     parent->num_children++;
 }
 
-struct Element* initialize_element(enum Element_type element_type)
+struct Element* initialize_element(Element_type element_type)
 {
     struct Element* element = malloc(sizeof(struct Element));
     element->type = element_type;

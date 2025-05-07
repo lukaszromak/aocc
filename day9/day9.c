@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
 int day9_pt1();
 int day9_pt2();
 void find_shortest_path(int buffer[][8], int vertices[], int vertices_size, int idx);
-int calculate_path_length(int buffer[][8], int vertices, int vertices_size);
+int calculate_path_length(int buffer[][8], int vertices[], int vertices_size);
 void parse_data_9(int buffer[][8]);
 
 unsigned int SHORTEST_PATH = 0xffffffff;

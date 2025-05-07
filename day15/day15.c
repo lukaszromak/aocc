@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define PT2_DESIRED_CALORIES 500
 
@@ -10,7 +11,7 @@ typedef struct Ingridient {
     int calories;
 } Ingridient;
 
-Ingridient* parse_input_day15(int num_ingridients);
+Ingridient* parse_input_day15(int* num_ingridients);
 void search_combinations(Ingridient* ingridients, int* curr_combination, int combination_size, int n, int units);
 
 const char* DAY15_INPUT_FILE_PATH = "input/day15.txt";
