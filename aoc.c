@@ -16,6 +16,7 @@
 #include "day15/day15.h"
 #include "day16/day16.h"
 #include "day18/day18.h"
+#include "day20/day20.h"
 #include <time.h>
 
 int (*pt1[24]) () = 
@@ -39,7 +40,7 @@ int (*pt1[24]) () =
     NULL,
     day18_pt1,
     NULL,
-    NULL,
+    day20_pt1,
     NULL,
     NULL,
     NULL,
@@ -67,7 +68,7 @@ int (*pt2[24]) () =
     NULL,
     day18_pt2,
     NULL,
-    NULL,
+    day20_pt2,
     NULL,
     NULL,
     NULL,
