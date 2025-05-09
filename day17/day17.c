@@ -145,6 +145,13 @@ void day17_solution(int* containers, int num_containers)
         curr_one = 0;
     }
 
+    free(masks);
+    for(int i = 0; i <= num_containers; i++) free(valid_combinations[i]);
+    free(valid_combinations);
+    free(num_valid_combinations);
+    free(valid_combinations_values);
+    free(curr);
+
     DAY17_PT1_SOLUTION = res_pt1;
     DAY17_PT2_SOLUTION = num_valid_combinations_values;
 }
