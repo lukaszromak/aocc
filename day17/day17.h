@@ -4,4 +4,4 @@
 int day17_pt1();
 int day17_pt2();
 
-#endif DAY17_H
+#endif
