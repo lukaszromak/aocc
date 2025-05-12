@@ -9,7 +9,7 @@ int day17_pt2();
 int* parse_data_day17(int* num_containers);
 void day17_solution(int* containers, int num_containers);
 
-const char* DAY17_INPUT_FILE_PATH = "../input/day17.txt";
+const char* DAY17_INPUT_FILE_PATH = "input/day17.txt";
 const int SUM_TO_FIND = 150;
 int DAY17_PT1_SOLUTION = -1;
 int DAY17_PT2_SOLUTION = -1;
