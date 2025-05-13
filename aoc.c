@@ -21,10 +21,11 @@
 #include "day21/day21.h"
 #include "day22/day22.h"
 #include "day23/day23.h"
+#include "day24/day24.h"
 #include "day25/day25.h"
 #include <time.h>
 
-int (*pt1[24]) () = 
+int (*pt1[25]) () = 
 {
     day1_pt1,
     day2_pt1,
@@ -53,7 +54,7 @@ int (*pt1[24]) () =
     day25_pt1
 };
 
-int (*pt2[24]) () = 
+int (*pt2[25]) () = 
 {
     day1_pt2,
     day2_pt2,
@@ -81,17 +82,19 @@ int (*pt2[24]) () =
     NULL,
 };
 
-char* (*pt1_str[24]) () = 
+char* (*pt1_str[25]) () = 
 {
 };
 
-char* (*pt2_str[24]) () =
+char* (*pt2_str[25]) () =
 {
 };
 
 int main() {
     pt1_str[10] = day11_pt1;
     pt2_str[10] = day11_pt2;
+    pt1_str[23] = day24_pt1;
+    pt2_str[23] = day24_pt2;
 
     char* result_str;
     int result;
